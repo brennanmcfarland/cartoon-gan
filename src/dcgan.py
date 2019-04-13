@@ -3,7 +3,7 @@ from tensorflow.keras.layers import Input, UpSampling2D
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras import backend as K
 from tensorflow.keras.utils import plot_model
-from tf.keras.losses import binary_crossentropy
+from tensorflow.keras.losses import binary_crossentropy
 import numpy as np
 from skimage import io
 import matplotlib.pyplot as plt
@@ -191,5 +191,5 @@ class DCGAN():
 
         gen_img = np.squeeze(gen_img, -1)
         io.imshow(gen_img)
-        plt.savefig("images/mnist_%d_%d.png" % (self.stage, epoch))
+        plt.savefig("../images/mnist_%d_%d.png" % (self.stage, epoch))
         plt.close()

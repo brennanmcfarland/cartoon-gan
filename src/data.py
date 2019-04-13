@@ -4,6 +4,7 @@ import numpy as np
 import random
 from skimage import io
 import globals
+from skimage.transform import downscale_local_mean
 
 
 def load_metadata():
@@ -16,7 +17,11 @@ def load_metadata():
     return metadata
 
 
-class DataProvider():
+def flat_vector(img, latent_category):
+    return np.random.rand(100)
+
+
+class DataProvider:
     metadata = None
     batch_size = 1  # because I get OOM otherwise
 
